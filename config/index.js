@@ -20,6 +20,16 @@ module.exports = {
     notifyOnErrors: true,
     poll: false, // https://webpack.js.org/configuration/dev-server/#devserver-watchoptions-
 
+    //配置跨域代理
+    proxyTable: {
+    	'/api': {
+    		target: 'http://127.0.0.1:4040/',
+    		changeOrigin: true,
+    		pathRewrite: {
+    			'^/api': ''
+    		}
+    	}
+    },
     
     /**
      * Source Maps
