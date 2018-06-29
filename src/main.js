@@ -9,12 +9,18 @@ import VueResource from 'vue-resource'
 //按需导入mint-ui组件
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import { Header, Swipe, SwipeItem } from 'mint-ui'
+import {  Button, Header, Swipe, SwipeItem } from 'mint-ui'
 
 
 //按需导入mui组件
 import './lib/mui/css/mui.min.css'
 import './lib/mui/css/icons-extra.css'
+
+//定义全局过滤器
+import moment from 'moment'
+Vue.filter('dateFormat',function(dataStr,pattern = "YYYY-MM-DD HH:mm:ss"){
+	return moment(dataStr).format(pattern)
+})
 
 //安装vue-resource
 Vue.use(VueResource)
@@ -24,6 +30,7 @@ Vue.use(MintUI)
 Vue.component(Header.name, Header)
 Vue.component(Swipe.name, Swipe)
 Vue.component(SwipeItem.name, SwipeItem)
+Vue.component(Button.name, Button)
 
 
 Vue.config.productionTip = false

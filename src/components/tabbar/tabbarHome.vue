@@ -1,12 +1,7 @@
 <template>
 	<div class="home-container">
 		<!--这是轮播图组件-->
-		<!--<swiper :lunbotuList="lunbotuList" :isfull="true"></swiper>-->
-		<mt-swipe :auto="4000" class="mint-swipe">
-			<mt-swipe-item v-for="item in swiperList" :key="item.url">
-				<img :src="item.img" />
-			</mt-swipe-item>
-		</mt-swipe>
+		<swiper :swiperList="swiperList" :isfull="true"></swiper>
 		<ul class="mui-table-view mui-grid-view mui-grid-9">
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
 				<router-link to="home/newslist">
@@ -21,7 +16,7 @@
 				</router-link>
 			</li>
 			<li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-				<router-link to="home/products">
+				<router-link to="home/goodslist">
 					<img src="../../images/menu3.png" alt="" />
 					<div class="mui-media-body">商品购买</div>
 				</router-link>
@@ -50,6 +45,7 @@
 
 <script>
 	import { Toast } from 'mint-ui'
+	import swiper from '../subcomponents/swiper.vue'
 
 	export default {
 		data() {
@@ -71,18 +67,14 @@
 					}
 				})
 			}
+		},
+		components:{
+			swiper
 		}
 	}
 </script>
 
 <style lang="scss" scoped>
-	.mint-swipe {
-		height: 200px;
-		img {
-			height: 200px;
-			width: 375px;
-		}
-	}
 	ul {
 		img {
 			height: 60px;
