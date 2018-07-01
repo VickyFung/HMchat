@@ -9,6 +9,8 @@ import newsList from '@/components/news/newsList'
 import newsInfo from '@/components/news/newsInfo'
 import goodsList from '@/components/goods/goodsList'
 import goodsInfo from '@/components/goods/goodsInfo'
+import goodsComts from '@/components/goods/goodsComts'
+import goodsDesc from '@/components/goods/goodsDesc'
 
 
 
@@ -24,7 +26,9 @@ export default new Router({
     { path: '/home/newslist', name: 'newsList', component: newsList },
     { path: '/home/newsinfo/:id', name: 'newsInfo', component: newsInfo },
     { path: '/home/goodslist', name: 'goodsList', component: goodsList },
-    { path: '/home/goodslist/:id', name: 'goodsInfo', component: goodsInfo }
+    { path: '/home/goodslist/:id', name: 'goodsInfo', component: goodsInfo },
+    { path: '/home/goodsdesc/:id', name: 'goodsDesc', component: goodsDesc },
+    { path: '/home/goodscomts/:id', name: 'goodsComts', component: goodsComts }
   ],
   linkActiveClass: 'mui-active'  //覆盖默认的路由高亮类
 })

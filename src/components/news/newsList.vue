@@ -1,7 +1,7 @@
 <template>
 	<div class="news-container">
 		<ul class="mui-table-view mui-table-view-chevron">
-			<li class="mui-table-view-cell mui-media" v-for="item in newslists" :key="item.img">
+			<li class="mui-table-view-cell mui-media" v-for="item in newslists" :key="item.title">
 				<router-link class='mui-navigate-right' :to="'/home/newsinfo/' + item.id">
 					<img class="mui-media-object mui-pull-left" :src="item.img">
 					<div class="mui-media-body">

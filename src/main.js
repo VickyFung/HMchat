@@ -6,11 +6,11 @@ import App from './App'
 import router from './router'
 //导入vue-resource
 import VueResource from 'vue-resource'
-//按需导入mint-ui组件
+
+////按需导入mint-ui组件，按需导入是不支持懒加载图标，所以全部导入
 import MintUI from 'mint-ui'
 import 'mint-ui/lib/style.css'
-import {  Button, Header, Swipe, SwipeItem } from 'mint-ui'
-
+//import {  Button, Header, Swipe, SwipeItem, Lazyload } from 'mint-ui'
 
 //按需导入mui组件
 import './lib/mui/css/mui.min.css'
@@ -27,10 +27,11 @@ Vue.use(VueResource)
 
 //绑定mint-ui
 Vue.use(MintUI)
-Vue.component(Header.name, Header)
-Vue.component(Swipe.name, Swipe)
-Vue.component(SwipeItem.name, SwipeItem)
-Vue.component(Button.name, Button)
+//Vue.use(Lazyload)
+//Vue.component(Header.name, Header)
+//Vue.component(Swipe.name, Swipe)
+//Vue.component(SwipeItem.name, SwipeItem)
+//Vue.component(Button.name, Button)
 
 
 Vue.config.productionTip = false

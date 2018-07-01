@@ -7,7 +7,7 @@
 </template>
 
 <script>
-//	import mui from "../../lib/mui/js/mui.js";
+//	import mui from "../../lib/mui/js/mui.min.js";
 
 	export default {
 		mounted() {
