@@ -8,11 +8,13 @@
     }],
     "stage-0"
   ],
-  "plugins": ["transform-vue-jsx", "transform-runtime"],
+  "plugins": ["transform-vue-jsx", "transform-runtime", "transform-remove-strict-mode"],
   "env": {
     "test": {
       "presets": ["env", "stage-2"]
     }
   },
-  "ignore": ["./src/lib/mui/mui.min.js"]
+  "ignore": [
+    "./src/lib/mui/js/*.js"
+  ]
 }

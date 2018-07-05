@@ -66,7 +66,7 @@ module.exports = {
       },
       {
         test: /\.sass$/,
-        loader: ['style-loader','css-loader','sass-loader'],
+        loader: ['vue-style-loader','css-loader','sass-loader'],
         include: [resolve('src'), resolve('test'), resolve('node_modules/webpack-dev-server/client')]
       }
     ]

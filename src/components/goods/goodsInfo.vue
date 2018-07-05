@@ -20,7 +20,7 @@
 					</p>
 					<p class="buy-count">
 						<span>购买数量：</span>
-						<numbox></numbox>
+						<numbox :max="goodsInfo.storage" @getCount = 'getSelectedCount'></numbox>
 					</p>
 					<p>
 						<mt-button type="primary" @click="">立即购买</mt-button>
@@ -54,6 +54,7 @@
 			return {
 				ballFlag: false,
 				id: this.$route.params.id,
+				selectedCount: 1,
 				goodsInfo: {},
 				goodsList: [{
 					"id": 0,
@@ -126,6 +127,9 @@
 			afterEnter(el) {
 				this.ballFlag = !this.ballFlag;
 //				console.log(xDist);
+			},
+			getSelectedCount(count){
+				this.selectedCount = count;
 			}
 		},
 		components: {
