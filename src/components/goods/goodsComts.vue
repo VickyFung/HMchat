@@ -1,5 +1,5 @@
 <template>
-	<h1>我的商品{{id}}的评论</h1>
+	<h1>商品--{{id}}--的评论</h1>
 </template>
 
 <script>

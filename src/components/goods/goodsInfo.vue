@@ -3,14 +3,14 @@
 		<transition @before-enter="beforeEnter" @enter="enter" @after-enter="afterEnter">
 			<div class="cart-ball" ref="ball" v-show="ballFlag"></div>
 		</transition>
-		<div class="mui-card" id="card-first">
+		<div class="mui-card">
 			<div class="mui-card-content">
 				<div class="mui-card-content-inner">
 					<swiper :swiperList="goodsList" :isfull="false"></swiper>
 				</div>
 			</div>
 		</div>
-		<div class="mui-card" id="card-second">
+		<div class="mui-card">
 			<div class="mui-card-header">{{goodsInfo.title}}</div>
 			<div class="mui-card-content">
 				<div class="mui-card-content-inner">
@@ -23,13 +23,13 @@
 						<numbox :max="goodsInfo.storage" @getCount = 'getSelectedCount'></numbox>
 					</p>
 					<p>
-						<mt-button type="primary" @click="">立即购买</mt-button>
-						<mt-button type="danger" @click="goCart()">加入购物车</mt-button>
+						<mt-button type="primary">立即购买</mt-button>
+						<mt-button type="danger" @click="goCart">加入购物车</mt-button>
 					</p>
 				</div>
 			</div>
 		</div>
-		<div class="mui-card" id="card-third">
+		<div class="mui-card">
 			<div class="mui-card-header">商品参数</div>
 			<div class="mui-card-content">
 				<div class="mui-card-content-inner">
@@ -105,6 +105,13 @@
 			},
 			goCart() {
 				this.ballFlag = !this.ballFlag;
+				var goodInfo = {
+					id: this.id,
+					count: this.selectedCount,
+					price: this.goodsInfo.price_new,
+					selected: true
+				};
+				this.$store.commit("addToCart",goodInfo);
 			},
 			beforeEnter(el) {
 				el.style.opacity = 1;

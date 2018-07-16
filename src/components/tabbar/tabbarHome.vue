@@ -84,8 +84,10 @@
 	.mui-grid-view.mui-grid-9 {
 		background-color: #fff;
 		border: none;
+		text-align: center;
 	}
 	.mui-grid-view.mui-grid-9 .mui-table-view-cell {
 		border: none;
+		width: 33%;
 	}
 </style>

@@ -3,7 +3,7 @@
 		<div class="newsinfo-container">
 			<h3 class="title">{{newsInfo.title}}</h3>
 			<div class="sub-title">
-				<span>发表时间：{{newsInfo.time}}</span>
+				<span>发表时间：{{newsInfo.time | dateFormat()}}</span>
 				<span>点击 {{newsInfo.clickT}} 次</span>
 			</div>
 			<hr />
